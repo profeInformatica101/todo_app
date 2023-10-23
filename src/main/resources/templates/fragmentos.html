@@ -1,0 +1,24 @@
+<!-- tarea.html -->
+
+<div th:fragment="agregarTarea">
+    <form th:action="@{/agregarTarea}" method="post">
+        <input type="text" name="nombreTarea" placeholder="Nombre de la tarea" required>
+        <select name="estadoTarea">
+            <option value="PorHacer">Por Hacer</option>
+            <option value="Haciendo">Haciendo</option>
+            <option value="Hecho">Hecho</option>
+        </select>
+        <button type="submit">Agregar Tarea</button>
+    </form>
+</div>
+
+<!-- Fragmento de listado de tareas -->
+<div th:fragment="listado_tareas">
+	 <div th:if="${tareas != null and not #lists.isEmpty(tareas)}">
+    <ul>
+        <li th:each="tarea : ${tareas}">
+            <span th:text="${tarea.name}"></span> - <span th:text="${tarea.status}"></span>
+        </li>
+    </ul>
+    </div>
+</div>

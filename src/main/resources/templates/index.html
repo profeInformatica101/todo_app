@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Página Principal</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="CSS/estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenido al sistema de gestión de tareas</h1>
+    </header>
+    
+     <!-- Tarea -->
+     <div th:replace="~{fragmentos :: agregarTarea}"></div>
+
+    <div th:replace="~{fragmentos :: listado_tareas}"></div>
+    
+    </body>
+    </html>
